@@ -1,6 +1,7 @@
 
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 
 import '../css/SignInUp.css';
 
@@ -14,9 +15,11 @@ const SignIn = () => {
                     <div className='sign-up-content'>
                         <TextField id="standard-basic" label="Email" variant="standard" className='sign-input-box' style={{width: '22vw'}} />
                         <TextField id="standard-basic" label="Password" variant="standard" className='sign-input-box' style={{width: '22vw'}} />
-                        <Button variant="contained" style={{ height: '6vh', width: '22vw', fontFamily: 'Poppins', fontSize: '1vw' }}>
-                            Sign In
-                        </Button>
+                        <Link to = '/dashboard'>
+                            <Button variant="contained" style={{ height: '6vh', width: '22vw', fontFamily: 'Poppins', fontSize: '1vw' }}>
+                                Sign In
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

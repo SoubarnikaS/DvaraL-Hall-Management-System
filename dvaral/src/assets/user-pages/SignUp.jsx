@@ -1,30 +1,56 @@
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+import { useAuth } from './AuthContext';
 import '../css/SignInUp.css';
 
+const SignIn = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { login } = useAuth();
 
+    const handleLogin = (e) => {
+        e.preventDefault();
+        login(email); 
+    };
 
-const SignUp = () => {
     return (
         <>
-            <div className='sign-up-container'>
+            <div className='sign-in-container'>
                 <div className='sign-up-box'>
-                    <div className='sign-up-content'>
-                        <TextField id="outlined-basic" label="Username" variant="outlined" className='sign-input-box' style={{width: '22vw'}}  />
-                        <TextField id="outlined-basic" label="Email" variant="outlined" className='sign-input-box' style={{width: '22vw'}} />
-                        <TextField id="outlined-basic" label="Address" variant="outlined" className='sign-input-box' style={{width: '22vw'}} />
-                        <TextField id="outlined-basic" label="Password" variant="outlined" className='sign-input-box'style={{width: '22vw'}}  />
-                        <TextField id="outlined-basic" label="Confirm Password" variant="outlined" className='sign-input-box' style={{width: '22vw'}} />
-                        <Button variant="contained" style={{ height: '6vh', width: '22vw', fontFamily: 'Poppins', fontSize: '1vw' }}>
-                            Sign Up
+                    <p>Welcome to DavarL</p>
+                    <form onSubmit={handleLogin} className='sign-up-content'>
+                        <TextField
+                            id="standard-basic"
+                            label="Email"
+                            variant="standard"
+                            className='sign-input-box'
+                            style={{ width: '22vw' }}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <TextField
+                            id="standard-basic"
+                            label="Password"
+                            variant="standard"
+                            className='sign-input-box'
+                            style={{ width: '22vw' }}
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            style={{ height: '6vh', width: '22vw', fontFamily: 'Poppins', fontSize: '1vw' }}
+                        >
+                            Sign In
                         </Button>
-                    </div>
+                    </form>
                 </div>
             </div>
-
         </>
-    )
+    );
 }
 
-export default SignUp;
+export default SignIn;

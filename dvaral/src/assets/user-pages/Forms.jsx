@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+
 import '../css/Forms.css'
 
 const Forms = () => {
+
+
     const [isSignIn, setIsSignIn] = useState(true);
 
-    const toggleForm = () => {
-        setIsSignIn(!isSignIn);
-    };
 
     return (
         <div className='login-container'>
@@ -18,10 +19,12 @@ const Forms = () => {
                         <button className={`toggle-button ${isSignIn ? 'active' : ''}`} onClick={() => setIsSignIn(true)}>
                             Sign In
                         </button>
+                        
                         <button className={`toggle-button ${!isSignIn ? 'active' : ''}`}
                             onClick={() => setIsSignIn(false)}>
                             Sign Up
                         </button>
+                      
                     </div>
                 </div>
                 <div className="form-container">
