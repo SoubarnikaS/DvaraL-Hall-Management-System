@@ -6,13 +6,14 @@ import Footer from './Footer';
 
 import Button from '@mui/material/Button';
 import { MoveRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 import LandingPageImg from '../images/LP2.avif';
 
 const LandingPage = () => {
 
- 
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
             <Navbar />
@@ -28,12 +29,16 @@ const LandingPage = () => {
                                 Looking for a space that fits your vision?
                                 Relax, we've got you covered with top-notch options.
                             </p>
-                            <Button
-                                style={{ color: "#1E3A8A" }}
-                                className="hover:bg-blue-900 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 ease-in-out"
-                            >
-                                Explore Venues <MoveRight className="ml-2" />
-                            </Button>
+                            <Link to="/explore-page">
+                            <div className='mt-6'>
+                                <Button
+                                style={{ color: "#fff" , backgroundColor: "#1E3A8A"}}
+                                className=" hover:bg-blue-900 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 ease-in-out"
+                                >
+                                    Explore Venues <MoveRight className="ml-2" />
+                                </Button>
+                                    </div>
+                            </Link>
                         </div>
                         <div className="w-full lg:w-2/4 mt-6 lg:mt-0 pr-5">
                             <img
@@ -45,8 +50,8 @@ const LandingPage = () => {
                     </div>
                 </section>
 
-                <LandingPageContent/>
-                    <Footer/>
+                <LandingPageContent />
+                <Footer />
             </main>
         </div>
     );
