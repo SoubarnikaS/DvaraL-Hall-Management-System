@@ -58,6 +58,8 @@ import React, { useState } from 'react';
 import { PackageOpen, Menu, X } from 'lucide-react';
 import Forms from './Forms';
 
+// import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -76,9 +78,11 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <PackageOpen className="h-8 w-8 text-blue-600" />
+                        {/* <Link to = "/"> */}
                         <span className="ml-2 text-3xl font-bold text-blue-600 font-['Dancing_Script']">
                             DvaraL
                         </span>
+                        {/* </Link> */}
                     </div>
 
                     {/* Desktop menu */}
